@@ -64,7 +64,10 @@ Easymse::Application.routes.draw do
   root :to => "home#index"
   
   devise_scope :user do
-    get "sign_in", :to => "devise/sessions#new"
+    get "sign-in", :to => "devise/sessions#new"
+    get "sign-up", :to => "devise/registrations#new"
+    get 'sign-out' => 'devise/sessions#destroy', :as => :destroy_user_session
   end
+  
   
 end

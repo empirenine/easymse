@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+	rolify
   has_many :clients
   
   # Include default devise modules. Others available are:

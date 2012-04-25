@@ -1,0 +1,10 @@
+body{background:#ccc;}
+#container{width:990px;margin:0 auto;padding:30px 20px;background-color:#fff;}
+
+
+
+/* Forms */
+input{background-color:#ddd;border:none;padding:5px 8px;}
+input:focus{background-color:#9cf;border:none;outline:none;}
+input[type="submit"]{background-color:#888;color:#fff;font-weight:700;}
+input[type="submit"]:hover,input[type="submit"]:focus{background-color:#ff8;color:#333;}

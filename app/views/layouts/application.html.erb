@@ -7,8 +7,29 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+<div id="container">
+  <% if user_signed_in? %>
+    <div>Oh hai <%= current_user.email %></div>
+    <div><a href="/sign-out">Log out?</a></div>
+  <% else %>
+    <div id="login">
+      <%= form_for("user", :url => user_session_path) do |f| %>
+        <div id="email"><%= f.text_field :email, placeholder: "Email address" %></div>
+        <div id="password"><%= f.password_field :password, placeholder: "Password" %></div>
+        <div id="remember">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+        <div id="login">
+          <%= f.submit 'Sign in' %>
+        </div>
+        <div id="forgot-password">
+          <%= link_to "Forgot your password?", new_password_path('user') %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+  <%= yield %>
+</div>
 </body>
 </html>
